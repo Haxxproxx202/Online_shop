@@ -2,20 +2,20 @@
 {% load static %}
 
 {% block title %}
-  Koszyk na zakupy
+  Shopping cart
 {% endblock %}
 
 {% block content %}
-  <h1>Koszyk na zakupy</h1>
+  <h1>Shopping cart</h1>
   <table class="cart">
     <thead>
       <tr>
-        <th>Zdjęcie</th>
-        <th>Produkt</th>
-        <th>Ilość</th>
-        <th>Usuń</th>
-        <th>Cena jednostkowa</th>
-        <th>Cena</th>
+        <th>Photo</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Delete</th>
+        <th>Unit price</th>
+        <th>Price</th>
       </tr>
     </thead>
     <tbody>
@@ -33,13 +33,13 @@
               <form action="{% url "cart:cart_add" product.id %}" method="post">
                 {{ item.update_quantity_form.quantity }}
                 {{ item.update_quantity_form.override }}
-                <input type="submit" value="Uaktualnij">
+                <input type="submit" value="Update">
                 {% csrf_token %}
               </form>
             </td>
             <td>
               <form action="{% url "cart:cart_remove" product.id %}" method="post">
-                <input type="submit" value="Usuń">
+                <input type="submit" value="Delete">
                 {% csrf_token %}
               </form>
             </td>
@@ -49,7 +49,7 @@
         {% endwith %}
       {% endfor %}
       <tr class="total">
-        <td>Razem</td>
+        <td>Summary</td>
         <td colspan="4"></td>
         <td class="num">${{ cart.get_total_price }}</td>
       </tr>
@@ -57,7 +57,7 @@
   </table>
   <p class="text-right">
     <a href="{% url "shop:product_list" %}" class="button
-    light">Kontynuuj zakupy</a>
+    light">Continue shopping</a>
 {#    <a href="{% url "orders:order_create" %}" class="button">#}
 {#      Do kasy#}
 {#    </a>#}
