@@ -1,0 +1,22 @@
+------------------- RabbitMQ commands -----------------------
+
+sudo systemctl start rabbitmq-server
+systemctl status rabbitmq-server
+sudo rabbitmqctl stop
+
+sudo rabbitmqctl status
+
+sudo lsof -i :5672
+-czy jakiś proces używa portu
+
+-------------------------------------------------------------
+
+celery -A project worker -l info
+celery -A project beat -l INFO
+celery -A project beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
+celery -A project flower --port=5555
+
+--------------------   Run Celery  --------------------------
+celery -A NAMEOFINSTANCE worker --loglevel=info
+
+
