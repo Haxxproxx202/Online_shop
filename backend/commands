@@ -9,7 +9,20 @@ sudo rabbitmqctl status
 sudo lsof -i :5672
 -czy jakiś proces używa portu
 
--------------------------------------------------------------
+----------------------------------------------
+
+## Instalacja "sudo apt-get install rabbitmq-server"
+
+1. sudo systemctl start rabbitmq-server
+2. sudo systemctl stop rabbitmq-server
+
+3a. sudo rabbitmq-plugins enable rabbitmq_management  ## Management plugin
+3b. (check url)  ==> http://0.0.0.0:15672/#/
+4. sudo rabbitmqctl add_user haxxproxx pass123
+5. sudo rabbitmqctl set_user_tags haxxproxx administrator
+
+
+-----------------------------------------------
 
 celery -A project worker -l info
 celery -A project beat -l INFO

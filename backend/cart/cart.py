@@ -42,16 +42,13 @@ class Cart(object):
                                      'price': str(product.price)}
 
         if override_quantity:
-            print("override_quantity true")
             self.cart[product_id]['quantity'] = quantity
         else:
-            print("override_quantity false")
             self.cart[product_id]['quantity'] += quantity
         self.save()
 
     def save(self):
         # mark the session as "modified" to make sure it gets saved
-        print(self.cart)
         self.session.modified = True
 
     def remove(self, product):
