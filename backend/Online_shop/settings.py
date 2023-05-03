@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'coupons.apps.CouponsConfig',
     # 3rd party apps
     'rosetta',
+    'parler',
 ]
 
 MIDDLEWARE = [
@@ -142,6 +143,17 @@ USE_TZ = True
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),
 )
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en'},
+        {'code': 'pl'},
+    ),
+    'default': {
+        'fallback': 'pl',
+        'hide_untranslated': False,
+    }
+}
 
 
 # Static files (CSS, JavaScript, Images)
