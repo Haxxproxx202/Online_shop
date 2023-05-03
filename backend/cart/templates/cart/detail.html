@@ -1,21 +1,23 @@
 {% extends "shop/base.html" %}
+{% load i18n %}
 {% load static %}
 
+
 {% block title %}
-  Shopping cart
+  {% trans 'Shopping cart' %}
 {% endblock %}
 
 {% block content %}
-  <h1>Shopping cart</h1>
+  <h1>{% trans 'Shopping cart' %}</h1>
   <table class="cart">
     <thead>
       <tr>
-        <th>Photo</th>
-        <th>Product</th>
-        <th>Quantity</th>
-        <th>Delete</th>
-        <th>Unit price</th>
-        <th>Price</th>
+        <th>{% trans 'Photo' %}</th>
+        <th>{% trans 'Product' %}</th>
+        <th>{% trans 'Quantity' %}</th>
+        <th>{% trans 'Delete' %}</th>
+        <th>{% trans 'Unit price' %}</th>
+        <th>{% trans 'Price' %}</th>
       </tr>
     </thead>
     <tbody>
@@ -33,13 +35,13 @@
               <form action="{% url "cart:cart_add" product.id %}" method="post">
                 {{ item.update_quantity_form.quantity }}
                 {{ item.update_quantity_form.override }}
-                <input type="submit" value="Update">
+                <input type="submit" value="{% trans 'Update' %}">
                 {% csrf_token %}
               </form>
             </td>
             <td>
               <form action="{% url "cart:cart_remove" product.id %}" method="post">
-                <input type="submit" value="Delete">
+                <input type="submit" value="{% trans 'Delete' %}">
                 {% csrf_token %}
               </form>
             </td>
@@ -55,14 +57,14 @@
 {#      </tr>#}
         {% if cart.coupon %}
         <tr class="subtotal">
-          <td>Total</td>
+          <td>{% trans 'Total' %}</td>
           <td colspan="4"></td>
           <td class="num">${{ cart.get_total_price|floatformat:2 }}</td>
         </tr>
         <tr>
-          <td>
-              Coupon "{{ cart.coupon.code }}" ({{ cart.coupon.discount }}% of discount)
-          </td>
+          {% blocktrans with code=cart.coupon.code discount=cart.coupon.discount %}
+            <td>"{{ code }}" coupon ({{ discount }}% off)</td>
+          {% endblocktrans %}
           <td colspan="4"></td>
           <td class="num neg">
             - ${{ cart.get_discount|floatformat:2 }}
@@ -70,7 +72,7 @@
         </tr>
       {% endif %}
       <tr class="total">
-        <td>Summary</td>
+        <td>{% trans 'Summary' %}</td>
         <td colspan="4"></td>
         <td class="num">
           ${{ cart.get_total_price_after_discount|floatformat:2 }}
@@ -79,18 +81,18 @@
     </tbody>
   </table>
 
-    <p>Discount coupon</p>
+    <p>{% trans 'Discount coupon' %}</p>
     <form action="{% url "coupons:apply" %}" method="post">
         {{ coupon_apply_form }}
-        <input type="submit" value="Apply">
+        <input type="submit" value="{% trans 'Apply' %}">
         {% csrf_token %}
     </form>
 
   <p class="text-right">
     <a href="{% url "shop:product_list" %}" class="button
-    light">Continue Shopping</a>
+    light">{% trans 'Continue Shopping' %}</a>
     <a href="{% url "orders:order_create" %}" class="button">
-      Proceed to Checkout
+      {% trans 'Proceed to Checkout' %}
     </a>
   </p>
 {% endblock %}
