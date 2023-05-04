@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     # 3rd party apps
     'rosetta',
     'parler',
+    'localflavor',
 ]
 
 MIDDLEWARE = [
@@ -195,4 +196,6 @@ BRAINTREE_CONF = braintree.Configuration.configure(
     BRAINTREE_PRIVATE_KEY
 )
 
-
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 1

@@ -12,9 +12,13 @@ import weasyprint
 
 
 def order_create(request):
+    current_path = request.path
     cart = Cart(request)
     if request.method == "POST":
-        form = OrderCreateForm(data=request.POST)
+        if "/pl/" in current_path:
+            form = OrderCreateForm(data=request.POST, prefix='pl')
+        else:
+            form = OrderCreateForm(data=request.POST, prefix='en')
         if form.is_valid():
             order = form.save(commit=False)
             if cart.coupon:
@@ -32,7 +36,10 @@ def order_create(request):
             return redirect(reverse('payment:process'))
             # return render(request, 'orders/order/created.html', {'order': order})
     else:
-        form = OrderCreateForm()
+        if "/pl/" in current_path:
+            form = OrderCreateForm(prefix='pl')
+        else:
+            form = OrderCreateForm(prefix='en')
     return render(request, 'orders/order/create.html', {'form': form, 'cart': cart})
 
 
