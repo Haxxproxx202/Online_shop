@@ -17,7 +17,7 @@ class Recommender(object):
     def products_bought(self, products):
         products_ids = [p.id for p in products]
         for product_id in products_ids:
-            for with_id in product_id:
+            for with_id in products_ids:
                 # get the other products bought with each product
                 if product_id != with_id:
                     r.zincrby(self.get_product_key(product_id),

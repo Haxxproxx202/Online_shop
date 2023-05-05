@@ -73,7 +73,7 @@ table.cart {
 }
 
 table.cart img {
-    width:180px;
+    width:50px;
 }
 
 tbody td.num {
@@ -106,12 +106,13 @@ form p input {
     border-radius:4px;
 }
 
+
 ul.errorlist {
    float:left;
    color:#ff0000;
    clear:both;
    font-size:13px;
-   margin:0; 
+   margin:0;
    padding:0;
 }
 
@@ -180,7 +181,7 @@ ul.errorlist {
 #main {
     float:left;
     width: 96%;
-    margin-right:-220px; 
+    margin-right:-220px;
     overflow:hidden;
 }
 
@@ -193,7 +194,7 @@ ul.errorlist {
 }
 
 .product-list .item img {
-    width:100%;
+    width:80%;
     margin-bottom:8px;
 }
 
@@ -290,7 +291,7 @@ ul.errorlist {
 }
 
 .recommendations img {
-    width:200px
+    width:70px
 }
 
 .recommendations p {

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-04 19:06+0200\n"
+"POT-Creation-Date: 2023-05-05 19:31+0200\n"
 "PO-Revision-Date: 2023-05-03 20:57+0200\n"
 "Last-Translator:   <o@2.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
-#: Online_shop/settings.py:129
+#: Online_shop/settings.py:130
 msgid "polski"
 msgstr ""
 
-#: Online_shop/settings.py:130
+#: Online_shop/settings.py:131
 msgid "angielski"
 msgstr ""
 
@@ -96,19 +96,23 @@ msgstr ""
 msgid "Summary"
 msgstr ""
 
-#: cart/templates/cart/detail.html:84
+#: cart/templates/cart/detail.html:86
+msgid "People who bought these products also bought"
+msgstr ""
+
+#: cart/templates/cart/detail.html:99
 msgid "Discount coupon"
 msgstr ""
 
-#: cart/templates/cart/detail.html:87
+#: cart/templates/cart/detail.html:102
 msgid "Apply"
 msgstr ""
 
-#: cart/templates/cart/detail.html:93
+#: cart/templates/cart/detail.html:108
 msgid "Continue Shopping"
 msgstr ""
 
-#: cart/templates/cart/detail.html:95
+#: cart/templates/cart/detail.html:110
 msgid "Proceed to Checkout"
 msgstr ""
 
@@ -159,6 +163,10 @@ msgstr ""
 
 #: shop/templates/shop/product/detail.html:23
 msgid "Add to cart"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:28
+msgid "People who bought this product also bought"
 msgstr ""
 
 #: shop/templates/shop/product/list.html:6

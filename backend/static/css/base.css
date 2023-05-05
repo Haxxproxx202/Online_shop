@@ -180,7 +180,7 @@ ul.errorlist {
 #main {
     float:left;
     width: 96%;
-    margin-right:-220px; 
+    margin-right:-220px;
     overflow:hidden;
 }
 
@@ -193,8 +193,17 @@ ul.errorlist {
 }
 
 .product-list .item img {
-    width:100%;
-    margin-bottom:8px;
+    width:10%;
+    margin-bottom:80px;
+}
+
+.item-x {
+    width: 10px;
+    height: auto;
+}
+
+.item-recommended img {
+    background-color: pink;
 }
 
 .product-detail {

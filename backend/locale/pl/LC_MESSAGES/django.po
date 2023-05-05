@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-04 19:06+0200\n"
-"PO-Revision-Date: 2023-05-04 19:08+0200\n"
+"POT-Creation-Date: 2023-05-05 19:31+0200\n"
+"PO-Revision-Date: 2023-05-05 19:34+0200\n"
 "Last-Translator:   <o@2.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
-#: Online_shop/settings.py:129
+#: Online_shop/settings.py:130
 msgid "polski"
 msgstr "Polski"
 
-#: Online_shop/settings.py:130
+#: Online_shop/settings.py:131
 msgid "angielski"
 msgstr "Angielski"
 
@@ -100,19 +100,23 @@ msgstr ""
 msgid "Summary"
 msgstr "Podsumowanie"
 
-#: cart/templates/cart/detail.html:84
+#: cart/templates/cart/detail.html:86
+msgid "People who bought these products also bought"
+msgstr "Ludzie, którzy kupili te produkty kupili także"
+
+#: cart/templates/cart/detail.html:99
 msgid "Discount coupon"
 msgstr "Kupon rabatowy"
 
-#: cart/templates/cart/detail.html:87
+#: cart/templates/cart/detail.html:102
 msgid "Apply"
 msgstr "Zastosuj"
 
-#: cart/templates/cart/detail.html:93
+#: cart/templates/cart/detail.html:108
 msgid "Continue Shopping"
 msgstr "Kontynuuj zakupy"
 
-#: cart/templates/cart/detail.html:95
+#: cart/templates/cart/detail.html:110
 msgid "Proceed to Checkout"
 msgstr "Idź do kasy"
 
@@ -138,7 +142,7 @@ msgstr "Mój sklep"
 
 #: shop/templates/shop/base.html:18
 msgid "Language"
-msgstr ""
+msgstr "Język"
 
 #: shop/templates/shop/base.html:35
 msgid "Your cart"
@@ -168,6 +172,10 @@ msgstr "Koszyk jest pusty"
 #: shop/templates/shop/product/detail.html:23
 msgid "Add to cart"
 msgstr "Dodaj do koszyka"
+
+#: shop/templates/shop/product/detail.html:28
+msgid "People who bought this product also bought"
+msgstr ""
 
 #: shop/templates/shop/product/list.html:6
 #: shop/templates/shop/product/list.html:24
